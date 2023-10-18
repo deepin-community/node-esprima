@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	tsc -p src
+	webpack
+	node tools/fixupbundle.js
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod +x debian/node-esprima/usr/share/nodejs/esprima/bin/*
+
+override_dh_auto_install:
+	dh_auto_install $@ --buildsystem=nodejs
+	# javascript does not like symlink whereas node accept it
+	mv debian/node-esprima/usr/share/nodejs/esprima/dist/* debian/node-esprima/usr/share/javascript/esprima
+	rmdir debian/node-esprima/usr/share/nodejs/esprima/dist
+	ln -s ../../javascript/esprima debian/node-esprima/usr/share/nodejs/esprima/dist
