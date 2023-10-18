@@ -1,0 +1,30 @@
+.TH ESPARSE "1" "June 2016" "ECMAScript Parser" "User Commands"
+.SH NAME
+esparse \- ECMAScript Parser using Esprima
+.SH DESCRIPTION
+.SS "Usage:"
+.IP
+esparse [options] file.js
+.PP
+Available options:
+.TP
+\fB\-\-comment\fR
+Gather all line and block comments in an array
+.TP
+\fB\-\-loc\fR
+Include line\-column location info for each syntax node
+.TP
+\fB\-\-range\fR
+Include index\-based range for each syntax node
+.TP
+\fB\-\-raw\fR
+Display the raw value of literals
+.TP
+\fB\-\-tokens\fR
+List all tokens in an array
+.TP
+\fB\-\-tolerant\fR
+Tolerate errors on a best\-effort basis (experimental)
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Shows program version

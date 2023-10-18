@@ -1,0 +1,16 @@
+Description: use src/*.js files instead of webpack generated file
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-05-22
+
+--- a/package.json
++++ b/package.json
+@@ -2,7 +2,7 @@
+   "name": "esprima",
+   "description": "ECMAScript parsing infrastructure for multipurpose analysis",
+   "homepage": "http://esprima.org",
+-  "main": "dist/esprima.js",
++  "main": "src/esprima.js",
+   "bin": {
+     "esparse": "./bin/esparse.js",
+     "esvalidate": "./bin/esvalidate.js"

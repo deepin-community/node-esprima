@@ -1,0 +1,2 @@
+symlink_to_dir /usr/share/javascript/esprima ../nodejs/esprima/dist 4.0.1+ds+~4.0.3-2~
+dir_to_symlink /usr/share/nodejs/esprima/dist  ../../javascript/esprima 4.0.1+ds+~4.0.3-2~

@@ -1,0 +1,15 @@
+Description: get rid of typing errors
+Author: Julien Puydt
+Forwarded: not yet, as I don't understand why upstream doesn't see them...
+
+--- node-esprima.orig/src/error-handler.ts
++++ node-esprima/src/error-handler.ts
+@@ -38,7 +38,7 @@
+         } catch (base) {
+             /* istanbul ignore else */
+             if (Object.create && Object.defineProperty) {
+-                error = Object.create(base);
++                error = Object.create(base as object | null);
+                 Object.defineProperty(error, 'column', { value: column });
+             }
+         }
